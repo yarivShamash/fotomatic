@@ -39,7 +39,7 @@ html {
 header {
   position: fixed;
   width: 100%;
-  height: 85px;
+  height: auto;
   background-color: white;
   padding: auto 30px;
   z-index: 1;
@@ -121,6 +121,8 @@ header .mobile {
   height: 43.5rem;
   background-image: url(../images/banner-landingpage.jpg);
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #sign-up-cta {
@@ -168,17 +170,20 @@ header .mobile {
 
 @media only screen and (max-width: 760px) {
   #sign-up-section {
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 28rem;
+
   }
 
   #sign-up-cta {
-    position: static;
+    /*position: static;*/
     width: auto;
     height: auto;
     background-color: transparent;
     border: none;
+    margin: 10.63rem auto;
   }
 
   #sign-up-cta .content {
@@ -258,6 +263,7 @@ header .mobile {
 }
 
 @media only screen and (max-width: 890px) {
+
   .feature h2 {
     font-size: 1.125rem;
     line-height: 1.3;
@@ -271,14 +277,32 @@ header .mobile {
 }
 
 @media only screen and (max-width: 760px) {
+
   #features-section {
-    flex-flow: column;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 96.5%;
     padding: 0;
   }
 
+  .center{
+    display: flex;
+    flex-direction: column;
+  }
+
   .feature {
+    /* left the work here trying to make the content appear*/
+    display: block;
+    width: 100%;
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
+  }
+
+  .feature .content{
+    /**/
+    display: block;
+    z-index: 0;
   }
 }
 
