@@ -237,7 +237,6 @@ header .mobile {
 }
 
 .feature .image-container {
-
   width: 90%;
   height: 65%;
   margin: 0 auto;
@@ -262,10 +261,12 @@ header .mobile {
   color: #4a4a4a;
 }
 
+/* the following media quary was given at the beggining. I chose not to use it
+because it's unncesary and creates complications
 @media only screen and (max-width: 890px) {
 
   .feature h2 {
-    font-size: 1.125rem;
+    /*font-size: 1.125rem;*
     line-height: 1.3;
     font-weight: normal;
   }
@@ -274,15 +275,16 @@ header .mobile {
     font-size: .875rem;
     line-height: 1.4;
   }
-}
+}*/
 
 @media only screen and (max-width: 760px) {
 
   #features-section {
-    flex-direction: column;
+/*flex-direction: column;  redline showed no column but the example site did so..*/
+/*height: auto;  trying to make the images in the right proportion*/
     align-items: center;
     margin: 0 auto;
-    width: 96.5%;
+    width: 100%;
     padding: 0;
   }
 
@@ -292,17 +294,29 @@ header .mobile {
   }
 
   .feature {
-    /* left the work here trying to make the content appear*/
-    display: block;
+/*height: 65%; auto; proportioning the images, these didn't work*/
+/*margin: 0 auto proportioning the image, this didn't work as well*/
+    display: flex;
     width: 100%;
     margin: 0;
-    padding: 1.25rem 1rem 0 1rem;
+    padding-top: 1.25rem;
+  }
+
+  .feature .image-container{
+/*margin: 0 auto; height: auto;  proportioning the images, these didn't work*/
+/* ===display: flex;=== this was set here but not nesicery. removing this rule
+resulted in a proporional image*/
+    width: 90%;
+    height: auto;
   }
 
   .feature .content{
-    /**/
-    display: block;
-    z-index: 0;
+    text-align: left;
+  }
+
+  .feature .content h2{
+
+    font-weight: bold;
   }
 }
 
@@ -404,12 +418,12 @@ header .mobile {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
